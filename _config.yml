@@ -1,1 +1,30 @@
-theme: jekyll-theme-minimal
+title: Nault Docs
+description: Documentation for Nault Wallet
+
+# Email and twitter are optional:
+twitter_username: TheNanoCenter
+
+# Add your Google Analytics ID here if you have one and want to use it
+google_analytics:
+
+# Everything below here can be ignored, unless you want to change the theme entirely
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-gist
+  - jekyll-octicons
+  - jekyll-github-metadata
+
+titles_from_headings:
+  enabled:     true
+  strip_title: true
+  collections: true
+
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  math_engine: katex
+  input: GFM
+  auto_ids: true
+  hard_wrap: false
+  syntax_highlighter: rouge
