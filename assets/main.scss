@@ -4,6 +4,10 @@
 
 @import "{{ site.theme }}";
 
+.post {
+        margin-top: 30px;
+}
+
 .post img {
         display: block;
         border:1px solid #021a40;
