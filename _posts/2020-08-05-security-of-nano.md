@@ -10,7 +10,7 @@ Let us talk about the security of Nano and using [Nault](https://nault.cc/). But
 
 ============================
 ## What does it mean to own Nano?
-As with most other cryptocurrencies, the Nano protocol is designed to transfer ownership of a stake in the currency total supply. By owning 1 Nano means you own the keys that control an account which is set to a balance of 1 Nano. Any fraction of that, down to the smallest possible unit of Nano called raw, can be moved to any other account. That is done by a set of parameters called a block, which is stored on the distributed Ledger. Two of the parameters are the account and the latest balance the account holds. Before the network can accept a new block, it needs to be signed. That can only be done by the private key for that specific account.
+As with most other cryptocurrencies, the Nano protocol is designed to transfer ownership of a stake in the currency total supply. By owning 1 NANO means you own the keys that control an account which is set to a balance of 1 NANO. Any fraction of that, down to the smallest possible unit called raw, can be moved to any other account. That is done by a set of parameters called a block, which is stored on the distributed Ledger. Two of the parameters are the account and the latest balance the account holds. Before the network can accept a new block, it needs to be signed. That can only be done by the private key for that specific account.
 
 The private keys are derived from a 64-char hexadecimal entropy string called a Nano seed. A single seed contains a total of 4,294,967,295 keys (or indexes) where each one unlocks a valid account (Nano address). In many wallets, we are only interested in the first account (index 0) but Nault, for example, can access any index if you so want. That's the principle and also why owning the seed means owning the Nano. Storing Nano at an exchange does NOT technically mean you own them, because the exchange handles the seed for you. They can be hacked or closed down without warning and in that case, the Nano is no longer under your control.
 
@@ -18,7 +18,7 @@ The private keys are derived from a 64-char hexadecimal entropy string called a 
 ## The Nano Protocol
 The blocks are validated and voted on in a distributed consensus model across the world using network nodes. If the nodes agree a block is valid, it's stored in the Ledger which is synchronized between the nodes.
 
-The security of your Nano is bound to the security of the network. Without a functioning network, the Nano can't be transferred and the value of the network (the value of Nano) would eventually drop to zero. That topic is too broad for this article and we will simply assume the network is functioning. There is plenty of material available as it's been discussed for years but easiest would be to refer to the successful [official security audit that was made](https://medium.com/nanocurrency/nano-protocol-security-audit-summary-and-full-report-48760be8ab3d) in 2018. The network has additonally been heavily improved since then.
+The security of your Nano is bound to the security of the network. Without a functioning network, the Nano can't be transferred and the value of the network (the value of 1 NANO) would eventually drop to zero. That topic is too broad for this article and we will simply assume the network is functioning. There is plenty of material available as it's been discussed for years but easiest would be to refer to the successful [official security audit that was made](https://medium.com/nanocurrency/nano-protocol-security-audit-summary-and-full-report-48760be8ab3d) in 2018. The network has additonally been heavily improved since then.
 
 ============================
 ## The Storage of Keys
@@ -53,6 +53,8 @@ Your keys are stored offline, thus avoiding any leaks to the Internet due to mal
 1. Create an unsigned block for account X (using the latest data from the network)
 1. Transfer it to an offline device where it's signed using a key that owns X
 1. Transfer the signed block to any online device where it's sent to the live network
+
+![](/images/security_12.png)
 
 Now, this is the most secure method with the cost of convenience. Nault makes this somewhat usable but you should be prepared for some extra steps. Steps that may, however, be well worth it if transacting large amounts! A [full walkthrough can be found here](https://youtu.be/a4NstF-jrSU), or a [speed demo](https://youtu.be/qThEPwi1csk) showing that offline-signing can be done in less than 5 seconds.
 
