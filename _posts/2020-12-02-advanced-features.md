@@ -7,7 +7,7 @@ But stability is not the only reason for having this unique possibility. Nault c
 Additionally, Nault has a built-in block explorer that is often overlooked.
 
 ============================
-## Table on Contents
+## Table of Contents
 
 1. TOC
 {:toc}
@@ -42,7 +42,7 @@ Just point the backend server to the node RPC address and you are good to go. If
 * version
 * work_generate
 
-To send and receive transactions you need to allow the "work_generate" command with any either of:
+To send and receive transactions you need to generate work. Either set the PoW source in the wallet settings to CPU or GPU, or if using server PoW, you can must allow the "work_generate" command with any either of:
 * Use the node itself by setting enable_control = true in the config-rpc.toml (and enable opencl in the config-node.toml if you have a GPU)
 * Use a work server by adding one or several work_peers in the config-node.toml (currently require a code change in Nault to pass "use_peers" as a parameter for the work_generate command)
 * Use a proxy server like [NanoRPCProxy](https://github.com/Joohansson/NanoRPCProxy) that has support for both dpow and bpow as a middleman

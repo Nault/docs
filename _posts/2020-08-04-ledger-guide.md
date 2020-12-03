@@ -5,7 +5,7 @@ If you have a Ledger device, you can use it with [Nault](https://nault.cc/) to s
 ![Ledger Nano X](/images/ledger_x.jpeg)
 
 ============================
-## Table on Contents
+## Table of Contents
 
 1. TOC
 {:toc}

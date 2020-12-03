@@ -3,7 +3,7 @@
 Let us talk about the security of Nano and using [Nault](https://nault.cc/). But before we dive in, you should understand the fundamentals of the Nano protocol and what it means to own Nano. This article will then divide the overall security into the following sections: The Nano protocol, The storage of keys and The usage of keys.
 
 ============================
-## Table on Contents
+## Table of Contents
 
 1. TOC
 {:toc}
