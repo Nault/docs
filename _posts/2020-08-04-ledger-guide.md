@@ -97,3 +97,34 @@ With that information, you are ready to store Nano with your Ledger Device and a
 ### Data Storage
 Nault does not store any information about you on a server. The only information stored is in your local browser storage (if not set the app setting to delete it when the browser is closed, or using an incognito tab) which allows you to use your wallet more easily on subsequent visits. With a Ledger device, the only information stored is your public account addresses, since that is the only information exposed by the Ledger device. It's also recommended to secure your Nault wallet with a password and lock it everytime you are done with it. That way your funds can only be accessed with the password.
 
+============================
+## Troubleshooting
+Some Ledger problems are not related to Nault but to the device itself and limited compatibility.
+
+### Failed to connect the ledger in Nault
+If you get errors while importing the ledger or when reconnecting to it, try one or several of the following most common issues. Make sure to reload the Nault app or web page after each step.
+
+1. Close other application that may disturb, especially Ledger Live, other running Nault or crypto wallets.
+2. Make sure the Nano app in the Ledger is running, or restart it.
+3. Use the latest [Nault desktop app](https://github.com/Nault/Nault/releases). The Ledger protocol used in the Desktop app is usually less sensitive compared to the web version as well. At least try with another browser. Chrome is usually the best one. Latest Edge, Brave and other Chromium based browsers work well too. Firefox currently uses an older protocol but could be more stable.
+4. Change USB port. It can be in bad shape or just changing from USB2/USB3 or vice versa can help. Try a port that is directly from the computer motherboard, no hubs.
+5. Change USB cable. A low-quality or very long cable can be problematic. We recommend using the one the came with the Ledger.
+6. Restart the computer or try with another. Open ledger live and manager to make sure the Ledger works. Upgrade to the latest Ledger firmware. Try a different operating system.
+
+More info in [this video](https://youtu.be/Ob2v02uDCuM)
+
+### Annoying popup
+This is a Windows thing when using the legacy U2F protocol. Usually seen in Firefox or older browsers. Try to use the latest [Nault desktop app](https://github.com/Nault/Nault/releases). The Ledger protocol used in the Desktop app is usually less sensitive compared to the web version as well. At least try with another browser. Chrome is usually the best one. Latest Edge, Brave and other Chromium based browsers work well too.
+
+### The transactions are not received
+
+1. There is a setting in the device Nano app that enables automatic receive. Then another setting in Nault app settings for automatic receive. If enabling both of them still doesn't work, go to the "Receive screen" in Nault and manually receive the transaction. That is usually the preferred method when dealing with the Ledger to avoid getting spam transactions.
+2. It could be an error with the backend server or heavy network traffic going on that has introduced a delay. Try changing to another server from the app settings. More info [here](https://docs.nault.cc/2020/12/02/advanced-features.html). You can also copy your account and open it in another block explorer like [nanocrawler](https://nanocrawler.cc/) to verify the pending/incoming transaction.
+
+### The wallet shows zero balance
+Do not panic, this is a common error. If no one else has access to your Ledger backup mnemonic or PIN code, the funds are going nowhere.
+
+1. Make sure the Ledger is connected. Should be a green notification.
+2. Go to the account screen. Make sure the account displayed are the one you sent Nano to. Click on it to check the history. If the account is missing, try "Add new account" or several like 20. If it still doesn't show, you have not sent Nano to the Ledger but to an account that belongs to another seed not stored in the Ledger. You need to find that and import to Nault.
+3. It could be an error with the backend server or heavy network traffic going on that has introduced a delay. Try changing to another server from the app settings. More info [here](https://docs.nault.cc/2020/12/02/advanced-features.html). You can also copy your account and open it in another block explorer like [nanocrawler](https://nanocrawler.cc/) to verify the balance.
+
