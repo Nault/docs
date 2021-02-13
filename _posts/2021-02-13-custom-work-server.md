@@ -7,9 +7,9 @@ That is fine for most users but it comes with limitations.
 The services can be offline or you want to do higher multiplier than what's allowed. 
 As a backup, Nault has also supported local CPU or GPU PoW using the browser.
 
-Tested with an RTX 2080 GPU and could make normal 1x pow at 0.25sec compared to around 5sec with webGL. 
-64x pow can be made in 16sec average. 
-Could be useful if the network is saturated for example and you want higher priority on your transactions.
+A third option is to use a custom work server running either remotely or localhost. The official work server has been tested with an RTX 2080 GPU with normal 1x pow comnputed in 0.25sec compared to around 5sec with webGL PoW. 
+64x pow can be made in 16sec on average.
+This can be useful if the network is saturated for example and you want higher priority on your transactions.
 
 ============================
 ## Table of Contents
@@ -25,7 +25,7 @@ Could be useful if the network is saturated for example and you want higher prio
 * Huge speed improvement of 10-40x compared to webGL
 * Allows custom multiplier up to 64x
 * Works in both web and desktop app (with limitations mentioned below)
-* Future-proof in case of the work algorithm changes to Equihash and webGL can't be done
+* Future-proof in case of the work algorithm changes and webGL can't be done
 
 ## How To
 
