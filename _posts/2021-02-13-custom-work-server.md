@@ -55,6 +55,6 @@ Specify the work server in the Nault app settings e.g.:
 
 Nault web app will not allow direct connection to `127.0.0.1` due to CORS policy. 
 To get that working you have to use a local proxy server that allows cross-origin calls. 
-In Apache that's just a Header set `Access-Control-Allow-Origin "*"`
+In Apache that's just a `Header set Access-Control-Allow-Origin "*"`
 
 The desktop app works fine with any work server source.
