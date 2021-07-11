@@ -34,7 +34,7 @@ We will use a Linux distro called [Slax](https://www.slax.org/) which is a moder
 9. Free
 
 ============================
-## Preparing the USB with Slax
+## Preparing the USB flash drive with Slax
 
 **A.** Download the Slax ISO. Currently has to be done with a little compromise since Nault requires Ubuntu20 or Debian10 and the latest Slax uses Debian9. A new version will hopefully come and this guide will update accordingly.
 
@@ -57,7 +57,7 @@ We will use a Linux distro called [Slax](https://www.slax.org/) which is a moder
 
 
 ============================
-## Install Nault
+## Install Nault inside Slax
 
 **A.** Launch Slax by restarting the computer with the USB flash drive. If it's not automatically booting, most computers allow you to press F8 to override the boot drive. During boot you can press ESC for more options, for example, erase any changed data or load into RAM.
 
