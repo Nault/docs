@@ -6,7 +6,7 @@ This guide is about a third option:
 
 **Make Nault portable by booting up a clean Linux distro and install the Nault desktop app within it**
 
-This will drastically reduce the risk of getting viruses if you never use the OS for anything other than Nault and never install any other software. It's nice to have Nault in your pocket and know its safe to use even when travelling, visiting friends, school or workplace.
+This will reduce the risk of getting viruses if you never use the OS for anything other than Nault and never install any other software. It's nice to have Nault in your pocket when travelling, visiting friends, school or workplace.
 
 ![](/images/slax_desktop.png)
 
@@ -38,13 +38,15 @@ We will use a Linux distro called [Slax](https://www.slax.org/) which is a moder
 
 **A.** Download the Slax ISO. Currently has to be done with a little compromise since Nault requires Ubuntu20 or Debian10 and the latest Slax uses Debian9. A new version will hopefully come and this guide will update accordingly.
 
-* **Option 1:** [Download official Slax 9](https://www.slax.org/#purchase) (32 or 64 bit) but limited to [Nault 1.10.2 desktop app](https://github.com/Nault/Nault/releases/tag/v1.10.2) or [nault.cc](https://nault.cc) web app
+* **Option 1:** [Download official Slax 9](https://www.slax.org/#purchase) (32 or 64 bit) but limited to [Nault 1.10.2 desktop app](https://github.com/Nault/Nault/releases/tag/v1.10.2) or [nault.cc](https://nault.cc) web app. Could also compile Nault from source code, see the advance section below.
 
 ![](/images/slax_download-iso-a.png)
 
 * **Option 2:** [Dowload unofficial Slax 10](http://lucbie.altervista.org/slax.php) (32 or 64 bit) and run the latest Nault desktop app or [nault.cc](https://nault.cc) web app. More info about the unofficial build can be found [here](https://groups.google.com/g/slax-users/c/l8M2-zLG5GE) and [here](https://www.slax.org/blog/25684-Testing-Slax-10.2-beta1.html#comments).
 
 ![](/images/slax_download-iso-b.png)
+
+{% include alert.html text="Please be aware that running unofficial versions of Linux distros comes with its own risk. Even the official Slax." %}
 
 
 **B.** Copy the slax folder from the ISO to a USB flash drive with at least 1GB in order to have some extra space. Or burn the ISO on a DVD but then you can't have persistent storage. More info [here](https://www.slax.org/starting.php)
@@ -61,7 +63,7 @@ We will use a Linux distro called [Slax](https://www.slax.org/) which is a moder
 
 **A.** Launch Slax by restarting the computer with the USB flash drive. If it's not automatically booting, most computers allow you to press F8 to override the boot drive. During boot you can press ESC for more options, for example, erase any changed data or load into RAM.
 
-**B.** When Slax has been launched you may want to change keyboard layout if not English. Right-click on the desktop and select keyboard layout of your choice. Possibly also change the screen resolution.
+**B.** When Slax has been launched you may want to change keyboard layout if not English. Right-click on the desktop and select keyboard layout of your choice. Possibly also change the screen resolution. If you rely in WiFi you need to launch the "Net Manager" and connect.
 
 **C.** Start the built-in browser from the windows button. Go to [Nault Github releases](https://github.com/Nault/Nault/releases) and download the latest appImage for Linux.
 
@@ -69,7 +71,7 @@ We will use a Linux distro called [Slax](https://www.slax.org/) which is a moder
 
 **D.** Open a terminal (xterm). Also from the windows button.
 
-**E.** Create a script to launch Nault more easily since it can't run under root user without a special flag.
+**E.** Create a script to launch Nault more easily since it can't run under "root" without a special flag. To paste clipboard into xterm you can use the middle mouse button.
 
 Make sure to type the correct Nault version below. Chmod is to make the script executable.
 
@@ -80,6 +82,11 @@ Make sure to type the correct Nault version below. Chmod is to make the script e
     chmod +x start.sh
 
 ![](/images/slax_nault-install.png)
+
+If using Slax 9 (Debian 9) you also need these before you can launch the AppImage:
+
+    apt install libatk-bridge2.0-0 -y
+    apt install libgtk-3-0 -y
 
 Now you can run ./start.sh from a terminal or double click it in the file manager. It should open up Nault and you are ready to go! The changes you made will be available during the next boot (because it's being saved to the USB/slax/changes/changes.dat, including the wallet if not setting up Nault to erase cache on exit.
 
@@ -112,19 +119,19 @@ When finished, exit the nano editor by ctrl+x
 
 From a terminal run:
 
-    apt install curl
-    apt install git
+    apt install curl -y
+    apt install git -y
     curl -sL https://deb.nodesource.com/setup_12.x | bash -
-    apt install nodejs
-    apt install build-essential git
-    apt install libudev-dev
-    apt install libusb-1.0-0-dev
-    apt install libatk-bridge2.0-0
-    apt install libgtk-3-0
-    apt install make
-    apt install build-essential
-    apt install pkg-config
-    apt install gcc-4.8 g++-4.8
+    apt install nodejs -y
+    apt install build-essential -y
+    apt install libudev-dev -y
+    apt install libusb-1.0-0-dev -y
+    apt install libatk-bridge2.0-0 -y
+    apt install libgtk-3-0 -y
+    apt install make -y
+    apt install build-essential -y
+    apt install pkg-config -y
+    apt install gcc-4.8 g++-4.8 -y
 
 It will take a while but will allow you to use NPM and build Nault.
 
