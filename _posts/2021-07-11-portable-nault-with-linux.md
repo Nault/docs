@@ -85,8 +85,8 @@ Make sure to type the correct Nault version below. Chmod is to make the script e
 
 If using Slax 9 (Debian 9) you also need these before you can launch the AppImage:
 
-    apt install libatk-bridge2.0-0 -y
-    apt install libgtk-3-0 -y
+    apt update
+    apt install libatk-bridge2.0-0 libgtk-3-0 -y
 
 Now you can run ./start.sh from a terminal or double click it in the file manager. It should open up Nault and you are ready to go! The changes you made will be available during the next boot (because it's being saved to the USB/slax/changes/changes.dat, including the wallet if not setting up Nault to erase cache on exit.
 
@@ -107,37 +107,36 @@ You may want to compile Nault, for example, if you have made your own changes to
 
 **A.** Edit the source list:
 
-From a terminal run this and add the lines to the bottom. It's to be able to install gcc-4.8 and g++-4.8:
+From a terminal run this:
 
-    nano /etc/apt/source.list
+    nano /etc/apt/sources.list
+
+..and add these lines to the bottom. It's to be able to install gcc-4.8 and g++-4.8:
+
     deb http://ftp.us.debian.org/debian/ jessie main contrib non-free
     deb-src http://ftp.us.debian.org/debian/ jessie main contrib non-free
 
-When finished, exit the nano editor by ctrl+x
+When finished, exit the nano editor by ctrl+x and update apt:
+
+    apt update
 
 **B.** Install dependencies not included with Slax
 
-From a terminal run:
+From a terminal run (one line at a time):
 
-    apt install curl -y
-    apt install git -y
+    apt install curl git -y
     curl -sL https://deb.nodesource.com/setup_12.x | bash -
     apt install nodejs -y
-    apt install build-essential -y
-    apt install libudev-dev -y
-    apt install libusb-1.0-0-dev -y
-    apt install libatk-bridge2.0-0 -y
-    apt install libgtk-3-0 -y
-    apt install make -y
-    apt install build-essential -y
-    apt install pkg-config -y
+    apt install libudev-dev libusb-1.0-0-dev make build-essential pkg-config -y
     apt install gcc-4.8 g++-4.8 -y
 
-It will take a while but will allow you to use NPM and build Nault.
+If using Slax 9 (Debian 9) you will also need these to run the AppImage later:
+
+    apt install libatk-bridge2.0-0 libgtk-3-0 -y
 
 **C.** Compile Nault
 
-From a terminal run:
+From a terminal run (one line at a time):
 
     git clone https://github.com/Nault/Nault
     cd Nault
