@@ -73,7 +73,9 @@ We will use a Linux distro called [Slax](https://www.slax.org/) which is a moder
 
 **D.** Open a terminal (xterm). Also from the start button.
 
-**E.** Create a script to launch Nault more easily since it can't run under "root" without a special flag. To paste clipboard into xterm you can use the middle mouse button.
+**E.** Create a script to launch Nault more easily since it can't run under "root" without a special flag.
+
+{% include info.html text="To paste clipboard (ctrl+c) into xterm you can use the middle mouse button." %}
 
 Make sure to type the correct Nault version below. Chmod is to make the script executable.
 
