@@ -67,6 +67,8 @@ We will use a Linux distro called [Slax](https://www.slax.org/) which is a moder
 
 **C.** Start the built-in browser from the bottom left start button. Go to [Nault Github releases](https://github.com/Nault/Nault/releases) and download the latest appImage for Linux.
 
+**If using Slax 9 (Debian 9) you are limited to [Nault 1.10.2 desktop app](https://github.com/Nault/Nault/releases/tag/v1.10.2) or you have to compile Nault from source code.**
+
 ![](/images/slax_download.png)
 
 **D.** Open a terminal (xterm). Also from the start button.
@@ -104,7 +106,7 @@ Now you can run ./start.sh from a terminal or double click it in the file manage
 
 Slax logs in automatically and if someone finds your flash drive they can see your data, for example the wallet balance if you have that saved. It's recommended to change the root password and disable auto-login.
 
-From a terminal run:
+From a terminal run (one line at a time):
 
     passwd
     systemctl disable xorg
@@ -173,13 +175,17 @@ Read more [here](https://www.slax.org/customize.php).
 
     savechanges nault.sb
 
-**D.** Optional: Create a fresh ISO which you can load on another USB or DVD:
+**D.** Optional: Create a fresh ISO which you can load on another flash drive or DVD:
 
     genslaxiso nault-slax.iso nault.sb
 
-**E.** Allow the USB to load the module on boot (even if running in RAM or starting fresh):
+**E.** Allow the flash drive to load the module on boot (even if running in RAM or starting fresh). Note: This command will not work if you already running slax via RAM. In that case you will need to copy the module manually to the USB folder /slax/modules/ from another OS:
 
     mv nault.sb /run/initramfs/memory/data/slax/modules/
+
+{% include alert.html text="If you protected Slax by changing the root password or disabled the GUI, that will not be stored in the module. Slax would auto-login if loaded only with this module." %}
+
+{% include info.html text="If you want to make sure you only store what you want in the module you can inspect it by converting to a directory with sb2dir, modify and revert with dir2sb. Or create the directory structure first and create the module that way." %}
 
 ============================
 
